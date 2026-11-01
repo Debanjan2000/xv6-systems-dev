@@ -110,3 +110,8 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+//<--D: wrapper for our new syscall
+uint64 sys_getprocs(void){
+  return getprocs();
+}

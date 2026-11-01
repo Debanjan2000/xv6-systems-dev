@@ -110,3 +110,8 @@ sync:
  li a7, SYS_sync
  ecall
  ret
+.global getprocs
+getprocs:
+ li a7, SYS_getprocs
+ ecall
+ ret
