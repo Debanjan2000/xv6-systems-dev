@@ -43,3 +43,6 @@ entry("sbrk");
 entry("pause");
 entry("uptime");
 entry("sync");
+entry("getprocs"); #puts "23"(entryprocs syscall no) to a special register--
+                   #-->calls "ecall"(cpu priviledges elevated to supervisor
+                   # model, user prog fixed).
