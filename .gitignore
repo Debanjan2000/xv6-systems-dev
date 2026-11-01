@@ -1,0 +1,13 @@
+# Ignore compiled object files and dependencies
+*.o
+*.d
+*.asm
+*.sym
+
+# Ignore kernel binaries and virtual disk
+kernel/kernel
+fs.img
+.gdbinit
+
+# Ignore VS Code settings if you have them
+.vscode/
