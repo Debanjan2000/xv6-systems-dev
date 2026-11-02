@@ -2,12 +2,18 @@
 
 An extended implementation of the MIT `xv6-riscv` operating system. This project upgrades the standard multi-processing xv6 kernel to support true **1:1 kernel-level threads**, shared memory address spaces, and efficient concurrency primitives.
 
-## 🚀 Key Features
+<!-- ## 🚀 Key Features -->
 
-* **`clone()` and `join()` System Calls:** Implemented POSIX-style kernel threads where multiple execution contexts (`struct proc`) are scheduled independently across RISC-V cores while sharing the same physical memory pages.
+<!-- * **`clone()` and `join()` System Calls:** Implemented POSIX-style kernel threads where multiple execution contexts (`struct proc`) are scheduled independently across RISC-V cores while sharing the same physical memory pages.
 * **Zero-Copy Memory Sharing (`uvmshare`):** Replaced default `fork()` deep-copy behavior with shared page table mapping, allowing threads to read/write to the same heap globally.
 * **Thread-Safe Memory Allocation:** Synchronized `sbrk()` and `growproc` using kernel spinlocks to prevent page-table corruption when multiple threads allocate memory simultaneously.
-* **Hybrid Userspace/Kernel Futexes:** Implemented fast atomic ticket-locks in userspace (`__sync_lock_test_and_set`) that fall back to kernel `SLEEPING` states (`futex_wait`/`futex_wake`) under high contention to eliminate CPU spin-wasting.
+* **Hybrid Userspace/Kernel Futexes:** Implemented fast atomic ticket-locks in userspace (`__sync_lock_test_and_set`) that fall back to kernel `SLEEPING` states (`futex_wait`/`futex_wake`) under high contention to eliminate CPU spin-wasting. -->
+## 🚀 Key Features
+
+- [ ] **`clone()` and `join()` System Calls:** Implemented POSIX-style kernel threads where multiple execution contexts (`struct proc`) are scheduled independently across RISC-V cores while sharing the same physical memory pages.
+- [ ] **Zero-Copy Memory Sharing (`uvmshare`):** Replaced default `fork()` deep-copy behavior with shared page table mapping, allowing threads to read/write to the same heap globally.
+- [ ] **Thread-Safe Memory Allocation:** Synchronized `sbrk()` and `growproc` using kernel spinlocks to prevent page-table corruption when multiple threads allocate memory simultaneously.
+- [ ] **Hybrid Userspace/Kernel Futexes:** Implemented fast atomic ticket-locks in userspace (`__sync_lock_test_and_set`) that fall back to kernel `SLEEPING` states (`futex_wait`/`futex_wake`) under high contention to eliminate CPU spin-wasting.
 
 ## 🧠 System Call Architecture (How it Works)
 
@@ -71,14 +77,14 @@ $ test_thread
 
 To exit the QEMU emulator, press Ctrl + A, release, then press X.
 
-## 📊 Benchmarks & Performance
+<!-- ## 📊 Benchmarks & Performance
 (To be added upon completion of Phase 3)
 
 Spinlock vs Futex: Measured context switch reduction during high-contention locking.
 
 Parallel Execution: Measured execution ticks (uptime()) scaling matrix multiplication across 4 emulated RISC-V cores.
 
-<!-- Built as a core systems engineering project based on MIT's xv6 OS. -->
+Built as a core systems engineering project based on MIT's xv6 OS. -->
 
 
 ***
